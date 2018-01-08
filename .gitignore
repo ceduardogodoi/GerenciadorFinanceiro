@@ -1,5 +1,6 @@
 ﻿# Ignorando diretório com os arquivos compilados e configurações do NetBeans
 /build/
+# Ignorando diretório com configurações individuais de usuários
 /nbproject/private/
 
 # Ignorando diretórios de arquivos compilados e arquivos de configurações do Eclipse
