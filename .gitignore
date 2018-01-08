@@ -1,2 +1,5 @@
-# Ignorando diretório com os arquivos .class
+﻿# Ignorando diretório com os arquivos .class
 /build/
+/bin/
+.classpath
+.project
