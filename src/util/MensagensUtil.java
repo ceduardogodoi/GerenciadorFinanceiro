@@ -31,6 +31,11 @@ public class MensagensUtil {
         return showConfirmDialog(null, mensagem, "Confirmação", YES_NO_OPTION);
     }
 
+    /**
+     * Exibe um <i>JOptionPane</i> de aviso.
+     *
+     * @param mensagem a mensagem a ser exibida
+     */
     public static void aviso(String mensagem) {
         showMessageDialog(null, mensagem, "Aviso", WARNING_MESSAGE);
     }
