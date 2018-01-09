@@ -1,6 +1,5 @@
 ﻿# Ignorando diretório com os arquivos compilados e configurações do NetBeans
 /build/
-build.xml
 # Ignorando diretório com configurações individuais de usuários
 /nbproject/private/
 
