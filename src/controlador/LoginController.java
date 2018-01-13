@@ -21,7 +21,7 @@ import view.PesquisaUsuarioView;
 public class LoginController implements FocoPoliticavel, ActionListener, CaretListener,
         FocusListener {
 
-    // Variáveis da classe
+    // Variáveis do objeto
     private LoginView loginView;
     private JTextField txtId;
     private JTextField txtUsuario;
@@ -84,6 +84,10 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
         return usuario;
     }
 
+    private static boolean isEmptyField(JTextComponent txtComponent) {
+        return txtComponent.getText().isEmpty();
+    }
+
     // Retorna um List com os componentes dessa classe
     @Override
     public List<JTextComponent> policyComponents() {
@@ -100,7 +104,7 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
 
     @Override
     public void caretUpdate(CaretEvent e) {
-        if (txtId.getText().isEmpty() && e.getDot() == 0) {
+        if (isEmptyField(txtId) && e.getDot() == 0) {
             CamposOperations.limpaCampos(policyComponents());
         }
     }
@@ -112,10 +116,8 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
 
     @Override
     public void focusLost(FocusEvent e) {
-        if (loginView.isActive()) {
-            if (!txtId.getText().isEmpty()) {
-                validaUsuario();
-            }
+        if (!isEmptyField(txtId)) {
+            validaUsuario();
         }
     }
 

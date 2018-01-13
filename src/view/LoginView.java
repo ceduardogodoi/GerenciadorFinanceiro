@@ -70,7 +70,7 @@ public class LoginView extends AbstractJanela {
         GroupLayout painelLayout = new GroupLayout(painel);
         painel.setLayout(painelLayout);
         painelLayout.setHorizontalGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(separador)
+            .addComponent(separador, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
             .addGroup(painelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -79,7 +79,7 @@ public class LoginView extends AbstractJanela {
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtUsuario))
                     .addGroup(GroupLayout.Alignment.TRAILING, painelLayout.createSequentialGroup()
-                        .addGap(0, 130, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addComponent(lblEnterEntrar, GroupLayout.Alignment.TRAILING)
                             .addComponent(lblEscSair, GroupLayout.Alignment.TRAILING)))
@@ -112,7 +112,7 @@ public class LoginView extends AbstractJanela {
                 .addComponent(lblEnterEntrar)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEscSair)
-                .addContainerGap())
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         GroupLayout pnlFormLayout = new GroupLayout(pnlForm);
