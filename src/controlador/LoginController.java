@@ -97,9 +97,13 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
     // Eventos
     @Override
     public void actionPerformed(ActionEvent e) {
+        desregistraListeners();
+
         if (e.getSource() == txtId) {
             validaUsuario();
         }
+
+        registraListeners();
     }
 
     @Override
