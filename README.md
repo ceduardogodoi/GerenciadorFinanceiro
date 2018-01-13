@@ -1,4 +1,3 @@
 # GerenciadorFinanceiro
-Aplicação Desktop em Java para Controle Financeiro pessoal
 
-Iniciando um Projeto Java para Controle Financeiros pessoais.
+Começando um Projeto Java Desktop para aprendizagem do uso do Git.
