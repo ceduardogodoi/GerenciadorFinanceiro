@@ -1,6 +1,7 @@
 package view;
 
 import controlador.LoginController;
+import db.DDLDatabase;
 import java.awt.EventQueue;
 import java.sql.SQLException;
 import javax.swing.UIManager;
@@ -19,7 +20,9 @@ public class Main {
                 }
             }
             
-            ConexaoUtil.testarConexao();  
+            DDLDatabase.criaBancoDeDados();
+            
+            ConexaoUtil.testaConexao();
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException | UnsupportedLookAndFeelException
                 | NullPointerException | SQLException e) {

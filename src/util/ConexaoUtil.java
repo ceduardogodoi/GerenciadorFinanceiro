@@ -14,7 +14,7 @@ public class ConexaoUtil {
      *
      * @throws SQLException se ocorrer um erro de acesso ao banco
      */
-    public static void testarConexao() throws SQLException {
+    public static void testaConexao() throws SQLException {
         new ConnectionPool().getConnection().close();
     }
 
