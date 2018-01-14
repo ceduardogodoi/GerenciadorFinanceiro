@@ -18,8 +18,8 @@ public class Main {
                     break;
                 }
             }
-
-            ConexaoUtil.testarConexao();
+            
+            ConexaoUtil.testarConexao();  
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException | UnsupportedLookAndFeelException
                 | NullPointerException | SQLException e) {
