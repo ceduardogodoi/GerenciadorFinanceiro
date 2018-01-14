@@ -1,7 +1,3 @@
-create database del;
-
-use del;
-
 create table usuario
 (
 id smallint(4) unsigned not null primary key auto_increment,
@@ -11,3 +7,4 @@ nome varchar(45) not null,
 index idx_login(login),
 index idx_nome(nome)
 );
+
