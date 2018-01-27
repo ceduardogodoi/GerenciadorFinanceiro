@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import util.MensagensUtil;
 
 public class DDLDatabase {
 
@@ -19,7 +18,7 @@ public class DDLDatabase {
             + "default charset utf8\n"
             + "default collate utf8_general_ci;";
 
-    public static boolean criaDatabase() {
+    public static boolean criaDatabase() throws SQLException {
         try (Connection conn = DriverManager.getConnection(URL + CONFIGS, USER, PASSWORD)) {
             try (Statement stmt = conn.createStatement()) {
                 stmt.execute(CREATE_DATABASE);
@@ -28,10 +27,6 @@ public class DDLDatabase {
 
                 return true;
             }
-        } catch (SQLException e) {
-            MensagensUtil.erro(e.getMessage());
-
-            return false;
         }
     }
 
