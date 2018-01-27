@@ -18,12 +18,12 @@ public class DDLDatabase {
             + "default charset utf8\n"
             + "default collate utf8_general_ci;";
 
-    public static boolean criaDatabase() throws SQLException {
+    public static boolean createDatabase() throws SQLException {
         try (Connection conn = DriverManager.getConnection(URL + CONFIGS, USER, PASSWORD)) {
             try (Statement stmt = conn.createStatement()) {
                 stmt.execute(CREATE_DATABASE);
 
-                System.out.println(CREATE_DATABASE);
+                System.out.println(CREATE_DATABASE + "\n");
 
                 return true;
             }

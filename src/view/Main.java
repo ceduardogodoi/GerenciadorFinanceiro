@@ -2,6 +2,7 @@ package view;
 
 import controlador.LoginController;
 import db.DDLDatabase;
+import db.DDLTableUsuario;
 import java.awt.EventQueue;
 import java.sql.SQLException;
 import javax.swing.UIManager;
@@ -18,8 +19,8 @@ public class Main {
                     break;
                 }
             }
-            
-            DDLDatabase.criaDatabase();
+
+            criaBancoDeDados();
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException | UnsupportedLookAndFeelException
                 | NullPointerException | SQLException e) {
@@ -29,10 +30,15 @@ public class Main {
         }
 
         LoginView loginView = new LoginView();
-        
+
         EventQueue.invokeLater(() -> new LoginController(loginView));
-        
+
         loginView.setVisible(true);
+    }
+
+    private static void criaBancoDeDados() throws SQLException {
+        DDLDatabase.createDatabase();
+        DDLTableUsuario.createTableUsuario();
     }
 
 }
