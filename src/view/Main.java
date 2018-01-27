@@ -6,7 +6,6 @@ import java.awt.EventQueue;
 import java.sql.SQLException;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import util.ConexaoUtil;
 import util.MensagensUtil;
 
 public class Main {
@@ -20,9 +19,7 @@ public class Main {
                 }
             }
             
-            DDLDatabase.criaBancoDeDados();
-            
-            ConexaoUtil.testaConexao();
+            DDLDatabase.criaDatabase();
         } catch (ClassNotFoundException | InstantiationException
                 | IllegalAccessException | UnsupportedLookAndFeelException
                 | NullPointerException | SQLException e) {
