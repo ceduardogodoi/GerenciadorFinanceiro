@@ -25,7 +25,7 @@ public class Main {
                 | IllegalAccessException | UnsupportedLookAndFeelException
                 | NullPointerException | SQLException e) {
 
-            MensagensUtil.erro(e.getClass() + e.getMessage());
+            MensagensUtil.erro(e.getMessage());
             System.exit(0);
         }
 
