@@ -19,7 +19,7 @@ public class DDLDatabase {
             + "default charset utf8\n"
             + "default collate utf8_general_ci;";
 
-    public static boolean criaBancoDeDados() {
+    public static boolean criaDatabase() {
         try (Connection conn = DriverManager.getConnection(URL + CONFIGS, USER, PASSWORD)) {
             try (Statement stmt = conn.createStatement()) {
                 stmt.execute(CREATE_DATABASE);
