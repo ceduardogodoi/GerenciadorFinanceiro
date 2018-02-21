@@ -1,7 +1,9 @@
 package db;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -20,14 +22,23 @@ public class DDLDatabase {
 
     public static boolean createDatabase() throws SQLException {
         try (Connection conn = DriverManager.getConnection(URL + CONFIGS, USER, PASSWORD)) {
+            DatabaseMetaData metaData = conn.getMetaData();
+            ResultSet rs = metaData.getCatalogs();
+
+            while (rs.next()) {
+                if (rs.getString("TABLE_CAT").equals(DEL)) {
+                    return true;
+                }
+            }
+
             try (Statement stmt = conn.createStatement()) {
                 stmt.execute(CREATE_DATABASE);
 
                 System.out.println(CREATE_DATABASE + "\n");
-
-                return true;
             }
         }
+
+        return true;
     }
 
 }
