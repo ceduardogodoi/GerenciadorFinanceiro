@@ -8,15 +8,15 @@ import java.sql.Statement;
 
 class StructureBuilder {
 
-    private static final String CREATEDATABASE = "create database";
-    private static final String CREATETABLE = "create table";
+    private static final String CREATE_DATABASE = "create database";
+    private static final String CREATE_TABLE = "create table";
 
     void createIfNotExists(Connection conn, String sql, String resourceName)
             throws SQLException {
         DatabaseMetaData metaData = conn.getMetaData();
         ResultSet rs;
 
-        if (sql.contains(CREATEDATABASE)) {
+        if (sql.contains(CREATE_DATABASE)) {
             rs = metaData.getCatalogs();
 
             while (rs.next()) {
@@ -31,7 +31,7 @@ class StructureBuilder {
             return;
         }
 
-        if (sql.contains(CREATETABLE)) {
+        if (sql.contains(CREATE_TABLE)) {
             rs = metaData.getTables(null, null, resourceName,
                     null);
 
