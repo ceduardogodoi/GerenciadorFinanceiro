@@ -2,16 +2,16 @@ package db;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class DDLTableUsuario {
+public class TableUsuario {
 
+    private static final String TABLE_NAME = "usuario";
     private static final String ID = "id";
     private static final String LOGIN = "login";
     private static final String SENHA = "senha";
     private static final String NOME = "nome";
 
-    private static final String CREATE_TABLE_USUARIO = "create table if not exists usuario\n"
+    private static final String DDL = "create table if not exists "+ TABLE_NAME + "\n"
             + "(\n"
             + ID + " smallint(4) unsigned not null primary key auto_increment,\n"
             + LOGIN + " varchar(10) unique not null,\n"
@@ -21,16 +21,12 @@ public class DDLTableUsuario {
             + "index idx_nome(" + NOME + ")\n"
             + ");";
 
-    public static boolean createTableUsuario() throws SQLException {
+    public static boolean createIfNotExists() throws SQLException {
         try (Connection conn = new ConnectionPool().getConnection()) {
-            try (Statement stmt = conn.createStatement()) {
-                stmt.execute(CREATE_TABLE_USUARIO);
-
-                System.out.println(CREATE_TABLE_USUARIO + "\n");
-
-                return true;
-            }
+            new StructureBuilder().createIfNotExists(conn, DDL, TABLE_NAME);
         }
+        
+        return true;
     }
 
 }
