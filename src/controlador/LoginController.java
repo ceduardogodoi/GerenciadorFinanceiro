@@ -14,6 +14,7 @@ import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.text.JTextComponent;
 import modelo.Usuario;
+import util.MensagensUtil;
 import validadores.CamposOperations;
 import view.LoginView;
 import view.PesquisaUsuarioView;
@@ -79,6 +80,13 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
 
         if (usuario != null) {
             txtUsuario.setText(usuario.getNome());
+            txtSenha.requestFocusInWindow();
+        } else {
+            CamposOperations.limpaCampos(policyComponents());
+
+            if (id != 0) {
+                MensagensUtil.aviso("Usuário não encontrado");
+            }
         }
 
         return usuario;
@@ -97,13 +105,9 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
     // Eventos
     @Override
     public void actionPerformed(ActionEvent e) {
-        desregistraListeners();
-
         if (e.getSource() == txtId) {
             validaUsuario();
         }
-
-        registraListeners();
     }
 
     @Override
@@ -120,9 +124,7 @@ public class LoginController implements FocoPoliticavel, ActionListener, CaretLi
 
     @Override
     public void focusLost(FocusEvent e) {
-        if (!isEmptyField(txtId)) {
-            validaUsuario();
-        }
+
     }
 
 }
