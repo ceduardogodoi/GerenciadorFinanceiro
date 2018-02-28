@@ -21,7 +21,7 @@ public class PesquisaUsuarioView extends AbstractDialogo {
         pnlForm = new JPanel();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Pesquisa de Usuaŕio");
+        setTitle("Pesquisa de Usuário");
         setModal(true);
         setResizable(false);
         setSize(new Dimension(500, 500));
