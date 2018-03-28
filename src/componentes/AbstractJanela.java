@@ -27,7 +27,7 @@ public abstract class AbstractJanela extends JFrame implements FocoPoliticavel {
      * @param fields campos a serem verificados
      */
     protected void sairUsandoEsc(List<JTextComponent> fields) {
-        mapearEsc(new AbstractAction() {
+        mapeiaEsc(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (CamposValidator.haCamposPreenchidos(fields)) {
@@ -42,7 +42,7 @@ public abstract class AbstractJanela extends JFrame implements FocoPoliticavel {
         });
     }
 
-    private void mapearEsc(AbstractAction abstractAction) {
+    private void mapeiaEsc(AbstractAction abstractAction) {
         getRootPane().getInputMap(WHEN_IN_FOCUSED_WINDOW).put(
                 KeyStroke.getKeyStroke(VK_ESCAPE, 0), "esc");
         getRootPane().getActionMap().put("esc", abstractAction);

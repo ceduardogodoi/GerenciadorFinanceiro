@@ -2,7 +2,6 @@ package validadores;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 import javax.swing.text.JTextComponent;
 import util.MensagensUtil;
 
@@ -13,7 +12,7 @@ import util.MensagensUtil;
 public class CamposValidator {
 
     /**
-     * Verifica se há campos vazios. Caso exista um
+     * Verifica se há campos vazios. Caso exista, um
      * <code>JOptionPane.showMessageDialog</code> será exibido mostrando os
      * campos que estão vazios.
      *
@@ -52,13 +51,7 @@ public class CamposValidator {
      * @return true se existirem um ou mais campos preenchidos
      */
     public static boolean haCamposPreenchidos(List<JTextComponent> campos) {
-        for (JTextComponent campo : campos) {
-            if (!campo.getText().isEmpty()) {
-                return true;
-            }
-        }
-        
-        return false;
+        return campos.stream().anyMatch(campo -> (!campo.getText().isEmpty()));
     }
 
 }

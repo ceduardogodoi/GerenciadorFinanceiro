@@ -57,6 +57,7 @@ public class LoginView extends AbstractJanela {
 
         lblCodigo.setText("Código:");
 
+        txtId.setFocusTraversalKeysEnabled(false);
         txtId.setName("Código"); // NOI18N
 
         lblSenha.setText("Senha:");
