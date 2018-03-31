@@ -34,7 +34,7 @@ public class LoginController implements FocoPoliticavel {
     }
 
     private void registraListeners() {
-        ajustaTab();
+        tabActionPerformed();
 
         txtId.addActionListener(e -> validaUsuario());
         txtId.addCaretListener(e -> {
@@ -44,7 +44,7 @@ public class LoginController implements FocoPoliticavel {
         });
     }
 
-    private void ajustaTab() {
+    private void tabActionPerformed() {
         txtId.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0), "tab");
         txtId.getActionMap().put("tab", new AbstractAction() {
             @Override
