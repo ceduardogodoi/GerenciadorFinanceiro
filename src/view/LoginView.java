@@ -31,8 +31,8 @@ public class LoginView extends AbstractJanela {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlGeral = new JPanel();
         pnlForm = new JPanel();
-        painel = new JPanel();
         lblInformeCredenciais = new JLabel();
         lblCodigo = new JLabel();
         txtId = new JTextFieldInteirosLimitado(4);
@@ -45,13 +45,14 @@ public class LoginView extends AbstractJanela {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("DeL - Login do Usuário");
+        setBackground(Color.white);
         setFocusTraversalPolicy(new PoliticaDeFoco(policyComponents()));
         setResizable(false);
 
-        pnlForm.setBackground(new Color(255, 255, 255));
+        pnlGeral.setBackground(new Color(255, 255, 255));
 
-        painel.setBackground(new Color(255, 255, 255));
-        painel.setBorder(BorderFactory.createEtchedBorder());
+        pnlForm.setBackground(new Color(255, 255, 255));
+        pnlForm.setBorder(BorderFactory.createEtchedBorder());
 
         lblInformeCredenciais.setText("Informe suas Credenciais");
 
@@ -68,24 +69,24 @@ public class LoginView extends AbstractJanela {
 
         lblEscSair.setText("ou ESC para Sair");
 
-        GroupLayout painelLayout = new GroupLayout(painel);
-        painel.setLayout(painelLayout);
-        painelLayout.setHorizontalGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        GroupLayout pnlFormLayout = new GroupLayout(pnlForm);
+        pnlForm.setLayout(pnlFormLayout);
+        pnlFormLayout.setHorizontalGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addComponent(separador, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
-            .addGroup(painelLayout.createSequentialGroup()
+            .addGroup(pnlFormLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLayout.createSequentialGroup()
+                .addGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFormLayout.createSequentialGroup()
                         .addComponent(txtId, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtUsuario))
-                    .addGroup(GroupLayout.Alignment.TRAILING, painelLayout.createSequentialGroup()
+                    .addGroup(GroupLayout.Alignment.TRAILING, pnlFormLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addComponent(lblEnterEntrar, GroupLayout.Alignment.TRAILING)
                             .addComponent(lblEscSair, GroupLayout.Alignment.TRAILING)))
-                    .addGroup(painelLayout.createSequentialGroup()
-                        .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFormLayout.createSequentialGroup()
+                        .addGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addComponent(lblInformeCredenciais)
                             .addComponent(lblCodigo)
                             .addComponent(lblSenha)
@@ -93,14 +94,14 @@ public class LoginView extends AbstractJanela {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        painelLayout.setVerticalGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(painelLayout.createSequentialGroup()
+        pnlFormLayout.setVerticalGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFormLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblInformeCredenciais)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCodigo)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                     .addComponent(txtId, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUsuario, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -116,28 +117,28 @@ public class LoginView extends AbstractJanela {
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        GroupLayout pnlFormLayout = new GroupLayout(pnlForm);
-        pnlForm.setLayout(pnlFormLayout);
-        pnlFormLayout.setHorizontalGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFormLayout.createSequentialGroup()
+        GroupLayout pnlGeralLayout = new GroupLayout(pnlGeral);
+        pnlGeral.setLayout(pnlGeralLayout);
+        pnlGeralLayout.setHorizontalGroup(pnlGeralLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGeralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlForm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pnlFormLayout.setVerticalGroup(pnlFormLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFormLayout.createSequentialGroup()
+        pnlGeralLayout.setVerticalGroup(pnlGeralLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGeralLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlForm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pnlForm, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlGeral, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addComponent(pnlForm, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlGeral, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         sairUsandoEsc(componentes);
@@ -160,8 +161,8 @@ public class LoginView extends AbstractJanela {
     private JLabel lblEscSair;
     private JLabel lblInformeCredenciais;
     private JLabel lblSenha;
-    private JPanel painel;
     private JPanel pnlForm;
+    private JPanel pnlGeral;
     private JSeparator separador;
     private JTextField txtId;
     private JPasswordField txtSenha;

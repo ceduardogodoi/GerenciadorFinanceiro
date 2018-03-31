@@ -65,8 +65,10 @@ public class LoginController implements FocoPoliticavel {
         String valorInformado = txtId.getText();
 
         if (valorInformado.isEmpty()) {
-            PesquisaUsuarioView pesquisaUsuarioView = new PesquisaUsuarioView();
-            pesquisaUsuarioView.setVisible(true);
+            PesquisaUsuarioView usuarioView = new PesquisaUsuarioView();
+            
+            PesquisaUsuarioController usuarioController = new PesquisaUsuarioController(usuarioView);
+            usuarioView.setVisible(true);
 
             id = 0; // aqui ficaria o método que retorna o id obtido na Pesquisa
         } else {
